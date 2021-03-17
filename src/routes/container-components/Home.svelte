@@ -57,7 +57,7 @@
       padding-top: 50px;
       top: 0;
       bottom: 0;
-      height: 100vh;
+      height: 93vh;
       color: #444444;
       .home {
         display: flex;
@@ -65,17 +65,6 @@
         align-items: center;
         height: 100%;
         width: 100%;
-      }
-      p {
-        font-size: 18px;
-        font-weight: 200;
-      }
-      h3 {
-        text-align: center;
-        font-weight: 300;
-      }
-      h5 {
-        font-weight: 300;
       }
       img {
         height: 55px;

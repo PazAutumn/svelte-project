@@ -73,9 +73,6 @@
     text-align: center;
     font-weight: 300;
   }
-  h5 {
-    font-weight: 300;
-  }
   img {
     height: 55px;
   }
