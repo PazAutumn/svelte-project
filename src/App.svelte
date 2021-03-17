@@ -15,14 +15,13 @@
   </script>
   
   <Router url="{url}">
-	<nav>
-	  <Navbar links={navbarLinks}/>
-	</nav>
-	<div>
-	  <Route path="blog/*" component="{Blog}" />
-	  <Route path="/" component="{Home}" />
-	  <Route path="about/:name" let:params>
-			<About name={params.name}/>
-		</Route>
-	</div>
+		<Navbar links={navbarLinks}/>
+		<div>
+			<Route path="/*" component="{Home}" />
+			<Route path="/" component="{Home}" />
+			<Route path="/home" component="{Home}" />
+			<Route path="about/:name" let:params>
+				<About name={params.name}/>
+			</Route>
+		</div>
   </Router>
