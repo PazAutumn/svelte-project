@@ -1,9 +1,9 @@
 <script>
 	import { Router, Route } from "svelte-routing";
 	import Navbar from "./components/Navbar.svelte"
-	import Home from "./routes/Home.svelte";
-	import About from "./routes/About.svelte";
-	import Blog from "./routes/Blog.svelte";
+	import Home from "./routes/container-components/Home.svelte";
+	import About from "./routes/container-components/About.svelte";
+	import Blog from "./routes/container-components/Blog.svelte";
   
 	// Used for SSR. A falsy value is ignored by the Router.
 	export let url = "";
