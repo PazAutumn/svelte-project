@@ -8,8 +8,8 @@
 	// Used for SSR. A falsy value is ignored by the Router.
 	export let url = "";
 	export let navbarLinks = [
-		{name: 'Blog', to: 'blog'},
-		{name: 'About', to: 'about/pachi'},
+		{name: 'Blog', to: '/blog'},
+		{name: 'Basics', to: '/basics'},
 		{name: 'Home', to: '/'},
 	]
   </script>
@@ -19,7 +19,6 @@
 		<div>
 			<Route path="/*" component="{Home}" />
 			<Route path="/" component="{Home}" />
-			<Route path="/home" component="{Home}" />
 			<Route path="about/:name" let:params>
 				<About name={params.name}/>
 			</Route>

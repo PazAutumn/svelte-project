@@ -1,28 +1,21 @@
 <script>
   import { link } from "svelte-routing";
+  import CodeBox from '../../components/CodeBox.svelte'
 </script>
 
 <div class="write">
   <h3>Write less code</h3>
+  <h5>Svelte construye componentes libres de boilerplate usando lenguajes que ya conoces - HTML, CSS Y Javascript.</h5>
   <p>
     Reducir la cantidad de código que tiene que escribir es un objetivo
     explícito de Svelte. Para ilustrar, veamos un componente muy simple
     implementado en React, Vue y Svelte. Primero, la versión Svelte:
   </p>
-  <div class="box code white-code">
-    <div class="framework">SVELTE</div>
-    <img src={"/assets/img/svelte-example1.png"} alt="" />
-  </div>
+  <CodeBox frameworkName={'svelte'} src={'/assets/img/svelte-example1.png'}/>
   <p>¿Cómo construiríamos esto en React? Probablemente se vería así:</p>
-  <div class="box code white-code">
-    <div class="framework">REACT</div>
-    <img src={"/assets/img/react-example1.png"} alt="" />
-  </div>
+  <CodeBox frameworkName={'react'} src={'/assets/img/react-example1.png'}/>
   <p>Aquí hay un componente equivalente en Vue:</p>
-  <div class="box code white-code">
-    <div class="framework">VUE</div>
-    <img src={"/assets/img/vue-example1.png"} alt="" />
-  </div>
+  <CodeBox frameworkName={'vue'} src={'/assets/img/vue-example1.png'}/>
   <p>
     En otras palabras, se necesitan 442 caracteres en React y 263 caracteres en
     Vue, para lograr algo que requiere 145 caracteres en Svelte. ¡La versión
@@ -37,34 +30,6 @@
 </div>
 
 <style type="text/scss">
-  .write {
-    .framework {
-      color: #f6fafd;
-      background-color: #575766;
-      border-radius: 0.5em;
-      padding: 5px;
-      position: absolute;
-      right: 0;
-    }
-    img {
-      height: 100%;
-    }
-  }
-  .code {
-    font-family: "Fira Mono", monospace;
-    border-radius: 0.5em;
-    margin: 20px;
-    display: flex;
-    justify-content: left;
-    position: relative;
-    padding: 5px;
-  }
-  .white-code {
-    background-color: #f6fafd;
-  }
-  .source {
-    text-align: right;
-  }
   p {
     font-size: 18px;
     font-weight: 200;

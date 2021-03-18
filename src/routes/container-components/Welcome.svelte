@@ -1,6 +1,5 @@
 <script>
   import { Link } from "svelte-routing";
-
   const title = "Hello Frogmis";
 </script>
 
@@ -18,13 +17,13 @@
   <br />
   Svelte se destaca por tres principales razones.
 </p>
-<Link to="write-less-code">
+<Link to="/write-less-code">
   <div class="box red">Write less code</div>
 </Link>
-<Link to="no-virtual-dom">
+<Link to="/no-virtual-dom">
   <div class="box blue">No virtual DOM</div>
 </Link>
-<Link to="truly-reactive">
+<Link to="/truly-reactive">
   <div class="box gray">Truly reactive</div>
 </Link>
 

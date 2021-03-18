@@ -1,34 +1,48 @@
 <script>
   import { Router, Route } from "svelte-routing";
-  import Welcome from "../presentation-components/Welcome.svelte";
+  import Welcome from "./Welcome.svelte";
   import WriteLessCode from "../presentation-components/WriteLessCode.svelte";
   import TrulyReactive from '../presentation-components/TrulyReactive.svelte';
   import NoVirtualDOM from '../presentation-components/NoVirtualDOM.svelte';
+  import Blog from '../container-components/Blog.svelte';
+  import Basics from './Basics.svelte';
+  import { currentPath } from '../../stores/PathStore';
 
   export let location;
+  const components = {
+    '/': Welcome,
+    '/blog': Blog,
+    '/basics': Basics
+  }
+  /*
+  currentPath.subscribe((value) => {
+    path = value;
+  })
+  */
 </script>
 
 <div class="row">
   <Router>
     <div class="col s4 left-col">
-      <Welcome />
+      <!--Welcome /-->
+      <svelte:component this={components[$currentPath]}/>
     </div>
     <div class="col s8 right-col">
-      {#if location.pathname === "/"}
+      {#if location.pathname === "/" || location.pathname === "/basics"}
         <div class="home">
           <img src={"/assets/img/svelte-logo-outline.svg"} alt="" />
           <img src={"/assets/img/svelte-logotype.svg"} alt="svelte-logotype" />
           <img src={"/assets/img/svelte-logo-outline.svg"} alt="" />
         </div>
       {:else}
-        <Route path="write-less-code">
+        <Route path="/write-less-code">
           <WriteLessCode />
         </Route>
-        <Route path="no-virtual-dom">
+        <Route path="/no-virtual-dom">
           <NoVirtualDOM/>
         </Route>
-        <Route path="truly-reactive">
-          <TrulyReactive></TrulyReactive>
+        <Route path="/truly-reactive">
+          <TrulyReactive/>
         </Route>
       {/if}
     </div>
