@@ -3,7 +3,7 @@
   import NavLink from "./NavLink.svelte";
 
   export let links = [];
-  let logo = "assets/img/svelte-logo-horizontal.svg";
+  let logo = "/assets/img/svelte-logo-horizontal.svg";
 </script>
 
 <div class="navbar-fixed">

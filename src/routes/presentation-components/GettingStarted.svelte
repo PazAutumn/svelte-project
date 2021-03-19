@@ -61,7 +61,7 @@
     que contiene el código fuente de este sitio.
   </p>
   <CodeBox title={'terminal'}>
-    &dollar; https://github.com/PazAutumn/svelte-project.git
+    &dollar; git clone https://github.com/PazAutumn/svelte-project.git
     &num; Nos posicionamos en el proyecto y nos cambiamos a la rama develop
     &dollar; cd svelte-project
     &dollar; git checkout develop
