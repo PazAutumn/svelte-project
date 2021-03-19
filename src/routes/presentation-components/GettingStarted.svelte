@@ -2,17 +2,6 @@
   import { link, navigate } from "svelte-routing";
   import CodeBox from "../../components/CodeBox.svelte";
 
-  /**
-   * &lt;script&gt;
-    let a = 1;
-    let b = 2;
-    &lt;/script&gt;
-
-    &lt;input type="number" bind:value=&lcub;a&rcub;&gt;
-    &lt;input type="number" bind:value=&lcub;b&rcub;&gt;
-
-    &lt;p&gt;&lcub;a&rcub; + &lcub;b&rcub; = &lcub;a + b&rcub;&lt;/p&gt;
-  */
   const goNext = () => {
     navigate('/routing')
   }

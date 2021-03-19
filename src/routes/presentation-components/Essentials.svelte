@@ -2,6 +2,8 @@
   import { navigate } from "svelte-routing";
   import CodeBox from "../../components/CodeBox.svelte";
 
+  let pokemon;
+
   const goNext = () => {
     navigate('/bonus-track')
   }
@@ -11,7 +13,8 @@
     message = "Hello!";
   }
 
-  const getPokemon = async (pokemon) => {
+  const getPokemon = async () => {
+    pokemon = pokemon.toLowerCase();
     const res = await fetch(
       `https://pokeapi.co/api/v2/pokemon/${pokemon}/`
     );
@@ -22,7 +25,11 @@
       throw new Error(data);
     }
   };
-  let promise = getPokemon('pikachu');
+  let promise = getPokemon();
+
+  const handleClick = () => {
+    promise = getPokemon();
+  }
 </script>
 
 <h1>Svelte essentials</h1>
@@ -108,13 +115,20 @@
     &lt;p style="color: red"&gt;&lcub;error.message&rcub;&lt;/p&gt;
   &lcub;/await&rcub;
 </CodeBox>
+<div class="input-field inline">
+  <input id="email_inline" type="email" class="validate" bind:value={pokemon}>
+  <label for="email_inline">Busca un pokemon</label>
+</div>
+<button class="btn waves-effect waves-light" name="action" on:click={handleClick}>buscar
+  <i class="material-icons right">send</i>
+</button>
 {#await promise}
   <p>...waiting</p>
 {:then pokemon}
   <p>the pokemon is</p>
   <img src={pokemon.sprites.front_default} alt="">
 {:catch error}
-  <p style="color: red">{error.message}</p>
+  <p style="color: red">No se encontró pokemon</p>
 {/await}
 <h4>Events</h4>
 <CodeBox>
@@ -134,11 +148,20 @@
   &lcub;/if&rcub;
 </CodeBox>
 <a class="waves-effect waves-light btn" on:click={sayHello}>say hello</a>
-{#if message !== ''} 
-  <p>{message}</p>
-{/if}
+<div class="answer">
+  {#if message !== ''} 
+    <p>{message}</p>
+  {/if}
+</div>
+
 <div>
   <button class="btn waves-effect waves-light" name="action" on:click={goNext}>Siguiente
     <i class="material-icons right">send</i>
   </button>
 </div>
+
+<style>
+  .answer {
+    min-height: 60px;
+  }
+</style>
