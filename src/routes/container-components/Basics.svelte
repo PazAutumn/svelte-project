@@ -1,13 +1,25 @@
-<p>
-  I did something cool today. Lorem ipsum dolor sit amet, consectetur 
-  adipisicing elit. Quisquam rerum asperiores, ex animi sunt ipsum. Voluptas 
-  sint id hic. Vel neque maxime exercitationem facere culpa nisi, nihil 
-  incidunt quo nostrum, beatae dignissimos dolores natus quaerat! Quasi sint 
-  praesentium inventore quidem, deserunt atque ipsum similique dolores maiores
-  expedita, qui totam. Totam et incidunt assumenda quas explicabo corporis 
-  eligendi amet sint ducimus, culpa fugit esse. Tempore dolorum sit 
-  perspiciatis corporis molestias nemo, veritatis, asperiores earum! 
-  Ex repudiandae aperiam asperiores esse minus veniam sapiente corrupti 
-  alias deleniti excepturi saepe explicabo eveniet harum fuga numquam 
-  nostrum adipisci pariatur iusto sint, impedit provident repellat quis?
-</p>
+<script>
+  import { Link } from "svelte-routing";
+</script>
+
+<h1>Basics</h1>
+<h5>En esta sección veremos los conocimientos escenciales para utilizar Svelte</h5>
+
+<Link to="/getting-started">
+  <div class="box gray">Getting started</div>
+</Link>
+<Link to="/routing">
+  <div class="box gray">Routing</div>
+</Link>
+<Link to="/essentials">
+  <div class="box gray">Svelte essentials</div>
+</Link>
+<Link to="/bonus-track">
+  <div class="box gray">BonusTrack</div>
+</Link>
+<style>
+  h1,
+  h5 {
+    text-align: center;
+  }
+</style>

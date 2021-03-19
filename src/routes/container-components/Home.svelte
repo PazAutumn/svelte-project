@@ -1,31 +1,29 @@
 <script>
   import { Router, Route } from "svelte-routing";
+  import { currentPath } from "../../stores/PathStore";
   import Welcome from "./Welcome.svelte";
   import WriteLessCode from "../presentation-components/WriteLessCode.svelte";
-  import TrulyReactive from '../presentation-components/TrulyReactive.svelte';
-  import NoVirtualDOM from '../presentation-components/NoVirtualDOM.svelte';
-  import Blog from '../container-components/Blog.svelte';
-  import Basics from './Basics.svelte';
-  import { currentPath } from '../../stores/PathStore';
+  import TrulyReactive from "../presentation-components/TrulyReactive.svelte";
+  import NoVirtualDOM from "../presentation-components/NoVirtualDOM.svelte";
+  import Basics from "./Basics.svelte";
+  import GettingStarted from "../presentation-components/GettingStarted.svelte";
+  import Routing from "../presentation-components/Routing.svelte";
+  import Essentials from "../presentation-components/Essentials.svelte";
+  import Bonustrack from "../presentation-components/BonusTrack.svelte";
+import BonusTrack from "../presentation-components/BonusTrack.svelte";
 
   export let location;
+
   const components = {
-    '/': Welcome,
-    '/blog': Blog,
-    '/basics': Basics
-  }
-  /*
-  currentPath.subscribe((value) => {
-    path = value;
-  })
-  */
+    "/": Welcome,
+    "/basics": Basics,
+  };
 </script>
 
 <div class="row">
   <Router>
     <div class="col s4 left-col">
-      <!--Welcome /-->
-      <svelte:component this={components[$currentPath]}/>
+      <svelte:component this={components[$currentPath]} />
     </div>
     <div class="col s8 right-col">
       {#if location.pathname === "/" || location.pathname === "/basics"}
@@ -39,10 +37,22 @@
           <WriteLessCode />
         </Route>
         <Route path="/no-virtual-dom">
-          <NoVirtualDOM/>
+          <NoVirtualDOM />
         </Route>
         <Route path="/truly-reactive">
-          <TrulyReactive/>
+          <TrulyReactive />
+        </Route>
+        <Route path="/getting-started">
+          <GettingStarted />
+        </Route>
+        <Route path="/routing">
+          <Routing />
+        </Route>
+        <Route path="/essentials">
+          <Essentials />
+        </Route>
+        <Route path="/bonus-track">
+          <BonusTrack />
         </Route>
       {/if}
     </div>

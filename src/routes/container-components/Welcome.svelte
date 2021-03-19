@@ -1,6 +1,6 @@
 <script>
   import { Link } from "svelte-routing";
-  const title = "Hello Frogmis";
+  const title = "Hello Froggies";
 </script>
 
 <h1>{title}</h1>
@@ -28,29 +28,14 @@
 </Link>
 
 <style type="text/scss">
-  .box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    border-radius: 0.5em;
-    margin: 5px 20px;
-    color: #f1f1f3;
-  }
-  h1,
-  h5 {
-    text-align: center;
-  }
   p {
     padding: 20px;
     text-align: justify;
     font-size: 18px;
     font-weight: 200;
   }
-  :global(a), :global(a):hover {
+  :global(a),
+  :global(a):hover {
     text-decoration: none;
-  }
-  .gray {
-    background-color: #575766;
   }
 </style>

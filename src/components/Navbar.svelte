@@ -1,6 +1,7 @@
 <script>
-  import NavLink from "./NavLink.svelte";
   import { Link } from "svelte-routing";
+  import NavLink from "./NavLink.svelte";
+
   export let links = [];
   let logo = "assets/img/svelte-logo-horizontal.svg";
 </script>
