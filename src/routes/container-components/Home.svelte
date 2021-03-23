@@ -9,8 +9,7 @@
   import GettingStarted from "../presentation-components/GettingStarted.svelte";
   import Routing from "../presentation-components/Routing.svelte";
   import Essentials from "../presentation-components/Essentials.svelte";
-  import Bonustrack from "../presentation-components/BonusTrack.svelte";
-import BonusTrack from "../presentation-components/BonusTrack.svelte";
+  import BonusTrack from "../presentation-components/BonusTrack.svelte";
 
   export let location;
 
